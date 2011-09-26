@@ -10,7 +10,10 @@ gem 'sprockets-jquery-tmpl'
 gem 'spine-rails', :git => 'git://github.com/maccman/spine-rails.git'
 
 gem 'thin'
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+end
 
 group :production do
   gem 'pg'
