@@ -77,7 +77,7 @@ class PagesList extends Spine.Controller
     @navigate("/pages", item.id)
     
   create: (e) ->
-    Page.create(name: "Sample page")
+    Page.create(name: prompt("Enter a name"))
 
 class Pages extends Spine.Controller
   constructor: ->    
