@@ -74,10 +74,11 @@ class PagesList extends Spine.Controller
     
   show: (e) ->
     item = $(e.target).item()
-    @navigate("/pages", item.id)
+    @navigate "/pages", item.id
     
   create: (e) ->
-    Page.create(name: prompt("Enter a name"))
+    item = Page.create(name: 'Dummy page')
+    @navigate "/pages", item.id
 
 class Pages extends Spine.Controller
   constructor: ->    
