@@ -1,5 +1,5 @@
 class Page extends Spine.Model
   @configure "Page", "name", "slug", "body"
-  @extend Spine.Ajax
+  @extend Spine.Model.Ajax
 
-module.exports = Page
+window.Page = Page

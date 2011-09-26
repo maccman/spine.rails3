@@ -1,49 +1,77 @@
-$    = jQuery
-Page = require("models/page")
+$ = jQuery
 
-class PagesItem extends Spine.Controller
+class PagesEdit extends Spine.Controller
   events:
-    "click .destroy": "destroy"
-    "click .edit": "edit"
+    "click .back": "back"
     "submit form": "update"
-    
+
   constructor: ->
-    throw("item required") unless @item
-    @item.bind("destroy", @remove)
-    @item.bind("update", @render)
-    
+    super
+    @active (params) ->
+      @change Page.find(params.id)
+
   render: =>
-    @html require("views/pages/show")(@item)
+    @html $.tmpl("app/views/pages/edit", @item)
+
+  change: (item) ->
+    @item = item
+    @render()
 
   update: (e) ->
     e.preventDefault()
     @item.updateAttributes($(e.target).serializeForm())
-    @el.removeClass("edit")
+    @back()
+   
+  back: ->
+    @navigate '/pages', @item.id
+  
+class PagesItem extends Spine.Controller
+  events:
+    "click .back": "back"
+    "click .edit": "edit"
+    "click .destroy": "destroyItem"
     
+  constructor: ->
+    super
+    @active (params) ->
+      @change Page.find(params.id)
+    
+  render: =>
+    @html $.tmpl("app/views/pages/show", @item)
+    
+  change: (item) ->
+    @item = item
+    @render()
+
+  destroyItem: ->
+    if confirm('Are you sure?')
+      @item.destroy()
+      @back()
+
   edit: ->
-    @el.addClass("edit")
+    @navigate '/pages', @item.id, 'edit'
     
-  destroy: ->
-    @item.destroy()
-    
-  remove: ->
-    @el.remove()
+  back: ->
+    @navigate '/pages'
     
 class PagesList extends Spine.Controller
+  className: "list"
+  
+  elements: 
+    ".items": "items"
+  
   events:
     "click .item": "show"
     "click .create": "create"
     
   constructor: ->
-    Page.bind("refresh", @addAll)
-    Page.bind("create", @addOne)
+    super
+    @html $.tmpl("app/views/pages/list")
+    Page.bind("refresh change", @render)
     
-  addAll: =>
-    @el.empty()
-    @addOne(page) for page in Page.all()
-    
-  addOne: (page) =>
-    @append(new PagesItem(item: page).render())    
+  render: =>
+    items = Page.all()
+    @items.html $.tmpl("app/views/pages/item", items)
     
   show: (e) ->
     item = $(e.target).item()
@@ -54,20 +82,29 @@ class PagesList extends Spine.Controller
 
 class Pages extends Spine.Controller
   constructor: ->    
+    super
     @list = new PagesList
+    @edit = new PagesEdit
     @item = new PagesItem
     
-    @manager = new Spine.Manager(@list, @item)
+    new Spine.Manager(@list, @edit, @item)
     
-    @append(@list, @item)
+    @append(@list, @edit, @item)
     
     @routes
       "/pages": (params) -> 
         @list.active(params)
+      "/pages/:id/edit": (params) ->
+        @edit.active(params)
       "/pages/:id": (params) ->
-        @item.change Page.find(params.id)
         @item.active(params)
-  
+        
+    @list.active()
+        
+    # Only setup routes once pages have loaded
+    Page.bind 'refresh', -> 
+      Spine.Route.setup()
+
     Page.fetch()
   
-module.exports = Pages
+window.Pages = Pages

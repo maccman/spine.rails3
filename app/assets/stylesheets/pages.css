@@ -1,0 +1,20 @@
+
+#pages {
+  width: 860px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #FFF;
+  -webkit-box-shadow: rgba(100, 100, 100, 0.3) 0 2px 6px;
+  -moz-box-shadow: rgba(100, 100, 100, 0.3) 0 2px 6px;
+  box-shadow: rgba(100, 100, 100, 0.3) 0 2px 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+#pages .list h1 {
+  margin-top: 0;
+}
+
+#pages > *:not(.active) {
+  display: none;
+}

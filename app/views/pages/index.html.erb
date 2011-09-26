@@ -3,18 +3,12 @@
 <head>
   <title>Spine Rails3</title>
   <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   
-  <script src="/javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/spine.js" type="text/javascript" charset="utf-8"></script>
-
-
-  <script src="/application.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" charset="utf-8">
-    var exports = this;
     jQuery(function(){
-      var App     = require("app");
-      exports.App = new App({el: $("body")});
+      new Pages({el: $("#pages")});
     });
   </script>
 </head>

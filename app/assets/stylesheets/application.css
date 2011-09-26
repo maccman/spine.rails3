@@ -5,3 +5,81 @@
  *= require_self
  *= require_tree . 
 */
+
+body {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+  color: #252519;
+  font-size: 15px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  background: #D0D0D0;
+}
+
+a, a:visited  {
+  color: #261a3b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #E2E2E2;
+  margin: 1em 1em 1.5em;
+}
+
+abbr {
+  cursor: help;
+  border-bottom: 1px dashed #000;
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.7em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 15px 0 15px 0;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h1 {
+  padding: 10px 0 8px 0;
+  margin-top: 30px;
+  border-bottom: 1px solid #e5e5ee;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+pre, code {
+  font-size: 12px; line-height: 18px;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  margin: 0; padding: 0;
+}
+
+pre {
+  overflow: auto;
+  border: 1px solid #e5e5ee;  
+  margin: 0 0 15px 0;
+  background: ghostWhite;
+  padding: 5px;
+}
+
+ul {
+  padding: 0;
+  margin: 10px 0;
+  list-style-position: inside;
+}
+
+ul li {
+  line-height: 1.3em;
+}
+
+label, label span {
+  display: block;
+}
