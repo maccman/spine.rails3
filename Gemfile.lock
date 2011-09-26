@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/maccman/spine-rails.git
-  revision: cd1b5c96bf3a26a0d0e57dfff856363c3ac161a1
+  revision: 514f0e03aa83785d7a3562a53f9b970110ee794e
   specs:
     spine-rails (0.0.1)
       actionpack (~> 3.1.0)

@@ -44,9 +44,8 @@ class PagesItem extends Spine.Controller
     @render()
 
   destroyItem: ->
-    if confirm('Are you sure?')
-      @item.destroy()
-      @back()
+    @item.destroy()
+    @back()
 
   edit: ->
     @navigate '/pages', @item.id, 'edit'
