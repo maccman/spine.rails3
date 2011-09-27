@@ -21,6 +21,10 @@
   margin-top: 0;
 }
 
+#pages .list li {
+  cursor: pointer;
+}
+
 #pages > *:not(.active) {
   display: none;
 }
