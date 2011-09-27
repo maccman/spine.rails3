@@ -18,8 +18,8 @@ class JuggernautHandler extends Spine.Module
     @jug = new Juggernaut(@options)
     
     @jug.on 'connect',    => @log 'connected'
-    @jug.on 'disconnect', => @log 'Jug disconnected'
-    @jug.on 'reconnect',  => @log 'Jug reconnecting'
+    @jug.on 'disconnect', => @log 'disconnected'
+    @jug.on 'reconnect',  => @log 'reconnecting'
 
     $.ajaxSetup
       beforeSend: (xhr) =>

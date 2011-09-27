@@ -2,8 +2,8 @@ $ = jQuery
 
 class PagesEdit extends Spine.Controller
   events:
-    "click .back": "back"
-    "submit form": "update"
+    'click .back': 'back'
+    'submit form': 'update'
 
   constructor: ->
     super
@@ -11,7 +11,7 @@ class PagesEdit extends Spine.Controller
       @change Page.find(params.id)
 
   render: =>
-    @html $.tmpl("app/views/pages/edit", @item)
+    @html $.tmpl('app/views/pages/edit', @item)
 
   change: (item) ->
     @item = item
@@ -27,17 +27,21 @@ class PagesEdit extends Spine.Controller
   
 class PagesItem extends Spine.Controller
   events:
-    "click .back": "back"
-    "click .edit": "edit"
-    "click .destroy": "destroyItem"
+    'click .back': 'back'
+    'click .edit': 'edit'
+    'click .destroy': 'destroyItem'
     
   constructor: ->
     super
+  
+    Page.bind 'change', (_, item) => 
+      @render() if item.eql(@item)
+
     @active (params) ->
       @change Page.find(params.id)
     
   render: =>
-    @html $.tmpl("app/views/pages/show", @item)
+    @html $.tmpl('app/views/pages/show', @item)
     
   change: (item) ->
     @item = item
@@ -54,31 +58,31 @@ class PagesItem extends Spine.Controller
     @navigate '/pages'
     
 class PagesList extends Spine.Controller
-  className: "list"
+  className: 'list'
   
   elements: 
-    ".items": "items"
+    '.items': 'items'
   
   events:
-    "click .item": "show"
-    "click .create": "create"
+    'click .item': 'show'
+    'click .create': 'create'
     
   constructor: ->
     super
-    @html $.tmpl("app/views/pages/list")
-    Page.bind("refresh change", @render)
+    @html $.tmpl('app/views/pages/list')
+    Page.bind('refresh change', @render)
     
   render: =>
     items = Page.all()
-    @items.html $.tmpl("app/views/pages/item", items)
+    @items.html $.tmpl('app/views/pages/item', items)
     
   show: (e) ->
     item = $(e.target).item()
-    @navigate "/pages", item.id
+    @navigate '/pages', item.id
     
   create: (e) ->
     item = Page.create(name: 'Dummy page')
-    @navigate "/pages", item.id, "edit"
+    @navigate '/pages', item.id, 'edit'
 
 class Pages extends Spine.Controller
   constructor: ->    
@@ -92,11 +96,11 @@ class Pages extends Spine.Controller
     @append(@list, @edit, @item)
     
     @routes
-      "/pages": (params) -> 
+      '/pages': (params) -> 
         @list.active(params)
-      "/pages/:id/edit": (params) ->
+      '/pages/:id/edit': (params) ->
         @edit.active(params)
-      "/pages/:id": (params) ->
+      '/pages/:id': (params) ->
         @item.active(params)
         
     @list.active()
