@@ -11,8 +11,7 @@ end
 gem 'jquery-rails'
 gem 'sprockets-jquery-tmpl'
 gem 'spine-rails'
-gem 'juggernaut', :git => 'git://github.com/maccman/juggernaut.git'
-
+gem 'juggernaut'
 gem 'thin'
 
 group :development do
