@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/maccman/spine-rails.git
-  revision: 514f0e03aa83785d7a3562a53f9b970110ee794e
+  remote: git://github.com/maccman/juggernaut.git
+  revision: 433052f72a221026a6001836cedf078ad48d8395
   specs:
-    spine-rails (0.0.1)
-      actionpack (~> 3.1.0)
+    juggernaut (2.0.1)
+      redis
 
 GEM
   remote: http://rubygems.org/
@@ -37,6 +37,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    archive-tar-minitar (0.5.2)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -47,6 +48,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.2)
+    columnize (0.3.4)
     daemons (1.1.4)
     erubis (2.7.0)
     eventmachine (0.12.10)
@@ -57,6 +59,8 @@ GEM
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
+    linecache19 (0.5.12)
+      ruby_core_source (>= 0.1.4)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -91,7 +95,20 @@ GEM
       thor (~> 0.14.6)
     rake (0.9.2)
     rdoc (3.9.4)
+    redis (2.2.2)
+    ruby-debug-base19 (0.11.25)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.5)
+      archive-tar-minitar (>= 0.5.2)
     sass (3.1.7)
+    spine-rails (0.0.2)
+      actionpack (~> 3.1.0)
     sprockets (2.0.0)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -119,10 +136,12 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails
   jquery-rails
+  juggernaut!
   pg
   rails (= 3.1.0)
+  ruby-debug19
   sass
-  spine-rails!
+  spine-rails
   sprockets-jquery-tmpl
   sqlite3
   thin

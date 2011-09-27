@@ -1,7 +1,13 @@
+#title {
+  width: 900px;  
+  margin: 30px auto 5px;
+  border: 0;
+  text-align: center;
+}
 
 #pages {
   width: 860px;
-  margin: 30px auto;
+  margin: 0 auto 30px auto;
   padding: 20px;
   background: #FFF;
   -webkit-box-shadow: rgba(100, 100, 100, 0.3) 0 2px 6px;
