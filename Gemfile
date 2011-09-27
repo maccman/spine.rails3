@@ -10,7 +10,7 @@ end
 
 gem 'jquery-rails'
 gem 'sprockets-jquery-tmpl'
-gem 'spine-rails', :git => 'git://github.com/maccman/spine-rails.git'
+gem 'spine-rails'
 
 gem 'thin'
 
