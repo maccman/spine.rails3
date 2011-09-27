@@ -35,7 +35,7 @@ class PagesItem extends Spine.Controller
     super
   
     Page.bind 'change', (item) => 
-      @render() if item?.eql?(@item)
+      @render() if item.eql(@item)
 
     @active (params) ->
       @change Page.find(params.id)
