@@ -2,6 +2,6 @@ $ = jQuery
 
 $::serializeForm = ->
   result = {}
-  $.each $(@).serializeArray(), (i, item) ->
-    result[item.name] = item.value;
+  for item in $(@).serializeArray()
+    result[item.name] = item.value
   result
