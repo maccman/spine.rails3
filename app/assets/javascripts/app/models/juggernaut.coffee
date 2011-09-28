@@ -1,6 +1,6 @@
 #= require juggernaut
 
-$   = jQuery
+$ = jQuery
 
 class JuggernautHandler extends Spine.Module
   @include Spine.Log
