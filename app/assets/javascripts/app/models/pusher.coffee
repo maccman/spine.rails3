@@ -19,7 +19,7 @@ class PusherHandler extends Spine.Module
     @channel.bind_all @processWithoutAjax
   
   process: (type, msg) =>
-    @log 'process', msg
+    @log 'process:', type, msg
     
     klass = eval(msg.class)
     switch type
