@@ -96,14 +96,14 @@ class Pages extends Spine.Controller
     @append(@list, @edit, @item)
     
     @routes
-      '/pages': (params) -> 
-        @list.active(params)
       '/pages/:id/edit': (params) ->
         @edit.active(params)
       '/pages/:id': (params) ->
         @item.active(params)
-        
-    @list.active()
+      '/pages': (params) -> 
+        @list.active(params)
+
+    @navigate '/pages'
         
     # Only setup routes once pages have loaded
     Page.bind 'refresh', -> 
