@@ -1,0 +1,6 @@
+<h1>Show Page</h1>
+
+<a data-type="back">Back</a>
+
+<p>Name: <%= @name %></p>
+<p>Body: <%= @body %></p>

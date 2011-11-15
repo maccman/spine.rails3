@@ -9,8 +9,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'sprockets-jquery-tmpl'
 gem 'spine-rails'
+gem 'eco'
 
 gem 'thin'
 

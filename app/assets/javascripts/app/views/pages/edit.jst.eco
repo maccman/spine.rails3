@@ -1,0 +1,23 @@
+<h1>Edit Page</h1>
+
+<form>
+  
+  <label>
+    <span>Name</span>
+    <input 
+      type="text" name="name" 
+      value="<%= @name %>" required
+ autofocus>
+  </label>
+  
+  <label>
+    <span>Body</span>
+    <input 
+      type="text" name="body" 
+      value="<%= @body %>" required
+>
+  </label>
+  
+  <button>Edit</button>
+
+</form>

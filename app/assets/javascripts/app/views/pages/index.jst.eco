@@ -1,0 +1,12 @@
+<h1>Listing Pages</h1>
+
+<% for page in @pages: %>
+  <div class="item" data-id="<%= page.id %>">
+    <a data-type="show"><%= page.name %></a>
+    
+    <a data-type="edit">Edit</a> 
+    <a data-type="destroy">Destroy</a>
+  </div>
+<% end %>
+
+<p><a data-type="new">New Page</a></p>
