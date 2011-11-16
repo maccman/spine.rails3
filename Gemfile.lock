@@ -92,7 +92,7 @@ GEM
     rdoc (3.11)
       json (~> 1.4)
     sass (3.1.10)
-    spine-rails (0.0.8)
+    spine-rails (0.0.9)
       rails (>= 3.1.0)
     sprockets (2.0.3)
       hike (~> 1.2)
@@ -109,7 +109,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
-    uglifier (1.0.4)
+    uglifier (1.1.0)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
 

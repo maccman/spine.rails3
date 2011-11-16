@@ -17,6 +17,7 @@ class App extends Spine.Controller
     
     @append(@pages = new App.Pages)
     
-    Spine.Route.setup()    
+    App.Page.one 'refresh', ->
+      Spine.Route.setup()  
 
 window.App = App

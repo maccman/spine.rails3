@@ -1,6 +1,6 @@
 <h1>Show Page</h1>
 
-<a data-type="back">Back</a>
+<a data-type="back">Back</a> | <a data-type="edit">Edit</a>
 
 <p>Name: <%= @name %></p>
 <p>Body: <%= @body %></p>

@@ -46,6 +46,7 @@ class Edit extends Spine.Controller
 class Show extends Spine.Controller
   events:
     'click [data-type=back]': 'back'
+    'click [data-type=edit]': 'edit'
 
   constructor: ->
     super
@@ -61,6 +62,9 @@ class Show extends Spine.Controller
 
   back: ->
     @navigate '/pages'
+    
+  edit: ->
+    @navigate '/pages', @item.id, 'edit'
 
 class Index extends Spine.Controller
   events:
