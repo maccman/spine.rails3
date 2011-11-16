@@ -86,7 +86,7 @@ class PostsController < ApplicationController
   protected
   
   def delay
-    # Simulate slow server
+    # Simulate slow server 
     sleep 3
   end
 end
