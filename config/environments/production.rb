@@ -1,4 +1,4 @@
-SpineRails3::Application.configure do
+Testdefaults::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -11,13 +11,21 @@ SpineRails3::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
-  # Compress both stylesheets and JavaScripts
-  config.assets.js_compressor  = :uglifier
-  config.assets.css_compressor = :scss
+  # Compress JavaScripts and CSS
+  config.assets.compress = true
+
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
+  # Generate digests for assets URLs
+  config.assets.digest = true
+
+  # Defaults to Rails.root.join("public/assets")
+  # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files
-  # (comment out if your front-end server doesn't support this)
-  config.action_dispatch.x_sendfile_header = "X-Sendfile" # Use 'X-Accel-Redirect' for nginx
+  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
