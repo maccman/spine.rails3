@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  before_filter :delay
-  
   # GET /posts
   # GET /posts.json
   def index
@@ -81,12 +79,5 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :ok }
     end
-  end
-  
-  protected
-  
-  def delay
-    # Simulate slow server 
-    sleep 3
   end
 end
