@@ -111,6 +111,6 @@ class App.Pages extends Spine.Stack
     '/pages/:id/edit': 'edit'
     '/pages/:id':      'show'
     '/pages':          'index'
+    '':                'index'
     
-  default: 'index'
   className: 'stack pages'
