@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'thin'
+gem 'json2-rails'
 
 group :development do
   gem 'sqlite3', '1.3.5'
